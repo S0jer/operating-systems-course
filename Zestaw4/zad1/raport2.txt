@@ -1,0 +1,68 @@
+
+Wyniki testu dla fork:
+
+Test: ignore
+Raise a signal
+Raise a signal [child]
+Test: handler
+Raise a signal
+Signal 10. | PID: 313 | PPID: 305
+Raise a signal [child]
+Signal 10. | PID: 314 | PPID: 313
+Test: mask
+Raise a signal
+Signal pending
+Rise a signal [child]
+Signal pending [child]
+Test: pending
+Raise a signal
+Signal pending
+Child process
+Signal not pending [child]
+
+
+Wnioski dla fork:
+
+Proces potomny dziedziczy ustawienia sygnałów dla:
+
+"ignore"
+"handler"
+"mask"
+
+Dla "pending" sygnał oczekujący nie jest widoczny w potomku
+
+
+######################################################################
+
+Wyniki testu dla exec:
+
+Test: ignore
+Raise a signal
+Using execl()
+Child for exec
+Raise a signal [child]
+Test: mask
+Raise a signal
+Signal pending
+Using execl()
+Child for exec
+Raise a signal [child]
+Signal pending [child]
+Test: pending
+Raise a signal
+Signal pending
+Using execl()
+Child for exec
+Signal pending [child]
+
+
+Wnioski dla exec:
+
+Proces potomny dziedziczy ustawienia sygnałów dla:
+
+"ignore"
+"pending"
+"mask"
+
+Dla exec sygnał oczekujący jest widoczny w przodku
+

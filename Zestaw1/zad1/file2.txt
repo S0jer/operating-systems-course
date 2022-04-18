@@ -1,0 +1,21 @@
+#biblioteka statyczna
+	gcc -c myLibrary.c
+	ar rcs lib1.a myLibrary.o
+	gcc -c main.c
+	gcc main.o lib1.a -o main_stat
+
+#biblioteka współdzielona
+	gcc -fPIC -c myLibrary.c
+	gcc -shared myLibrary.o -o lib1.so
+	gcc -c main.c
+	gcc main.o -L. -lmyLibrary -Wl, -rpath=. -o main_wspoldz #doddatkowa sciezka do myLibrary
+
+#biblioteka ladowana dynamicznie przez program
+	gcc -fPIC -c myLibrary.c
+	gcc -shared myLibrary.o lib1.so
+	gcc main2.c -o main_lad_dynam -ldl
+
+#test
+	./main_stat	t 1000 z plik1.txt z plik2.txt z plik1.txt u 0 u 1 u 2
+	./main_wspoldz	t 1000 z plik1.txt z plik2.txt z plik1.txt u 0 u 1 u 2
+	./main_ladow_dynam	t 1000 z plik1.txt z plik2.txt z plik1.txt u 0 u 1 u 2
