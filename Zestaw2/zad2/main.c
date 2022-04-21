@@ -2,10 +2,6 @@
 // Created by ppjas on 3/17/2022.
 //
 
-//
-// Created by ppjas on 3/17/2022.
-//
-
 
 #include <stdio.h>
 #include <stdlib.h>

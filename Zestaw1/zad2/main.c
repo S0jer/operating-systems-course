@@ -53,7 +53,6 @@ int main(int argc, char *argv[]) {
     printf("TOTAL TIME\n");
     printTime(clock_start, clock_end, start, end);
 
-
     return 0;
 }
 

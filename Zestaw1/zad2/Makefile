@@ -4,22 +4,21 @@ CFLAGS = -Wall -g
 all: static shared
 
 static:
-	$(CC) $(CFLAGS) -c myLibrary.c -o myLibrary.o
-	ar rcs libmyLibrary.a myLibrary.o
+	@$(CC) $(CFLAGS) -c myLibrary.c -o myLibrary.o
+	@ar rcs libmyLibrary.a myLibrary.o
 
 
 shared:
-	$(CC) $(CFLAGS) -fPIC -c myLibrary.c
-	$(CC) $(CFLAGS) -shared myLibrary.o -o libmyLibrary.so
+	@$(CC) $(CFLAGS) -fPIC -c myLibrary.c
+	@$(CC) $(CFLAGS) -shared myLibrary.o -o libmyLibrary.so
 
 
 clean:
-	rm -rf *.o *.a *.so main
+	@rm -rf *.o *.a *.so main
 
 tests:
-	rm -f raport2.txt
-
-	make -s test_static
+	@rm -f raport2.txt
+	@make -s test_static
 
 
 test_static: static
@@ -28,20 +27,20 @@ test_static: static
 
 	@echo "\n STATIC TEST \n" >> raport2.txt
 	# --no-print-directory - to not print  “Entering/Leaving directory ...” messages
-	make --no-print-directory small >> raport2.txt
-	make --no-print-directory medium >> raport2.txt
-	make --no-print-directory large >> raport2.txt
+	@make --no-print-directory small >> raport2.txt
+	@make --no-print-directory medium >> raport2.txt
+	@make --no-print-directory large >> raport2.txt
 
 
 test_shared: shared
-	$(CC) -c main.c
-	$(CC) main.o -L. -lmyLibrary -Wl,-rpath=. -o main -${OO}
+	@$(CC) -c main.c
+	@$(CC) main.o -L. -lmyLibrary -Wl,-rpath=. -o main -${OO}
 
 	@echo " SHARED TEST " >> raport2.txt
 
-	make --no-print-directory small >> raport2.txt
-	make --no-print-directory medium >> raport2.txt
-	make --no-print-directory large >> raport2.txt
+	@make --no-print-directory small >> raport2.txt
+	@make --no-print-directory medium >> raport2.txt
+	@make --no-print-directory large >> raport2.txt
 
 
 small:
