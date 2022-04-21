@@ -48,6 +48,7 @@ main(int argc, char *argv[]) {
             }
 
             /***** Uruchom proces ls *****/
+//            execl("/user/bin/ls", "/user/bin/ls", NULL);
             char cmdls[] = "ls";
             system(cmdls);
 
@@ -85,6 +86,7 @@ main(int argc, char *argv[]) {
 
             }
             /***** uruchom proces wc -l *****/
+//            execl("/user/bin/wc", "/user/bin/wc", "-l", NULL);
             char cmd[] = "wc -l";
             system(cmd);
 

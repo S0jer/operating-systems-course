@@ -1,0 +1,5 @@
+com0 = cat /etc/passwd | echo hello
+com1 = ls | grep '^a' | echo world
+com2 = grep 11 | ps | grep 'com'
+com0 | com1
+com2
