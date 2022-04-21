@@ -43,7 +43,6 @@ void searchFor(char *dirName, char *strToFind, int depth) {
                 perror("Can not open file");
                 exit(1);
             }
-
             char *l = calloc(sizeof(char), 256);
             while (fgets(l, 256 * sizeof(char), f)) {
                 if (strstr(l, strToFind)) found = true;
@@ -53,16 +52,11 @@ void searchFor(char *dirName, char *strToFind, int depth) {
                 printf("\npath: %s\n", path);
                 printf("PID:  %d \nPPID: %d\n\n", getpid(), getppid());
             }
-
             free(l);
-
         }
-
         free(path);
         wait(NULL);
-
     }
-
     closedir(dir);
 }
 

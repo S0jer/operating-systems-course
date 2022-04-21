@@ -33,7 +33,6 @@ void check_fd(int fd) {
         exit(-1);
     }
 }
-
 int main(void) {
     unlink(FILE_NAME);
     int fd1 = open_file(FILE_NAME);

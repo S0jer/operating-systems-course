@@ -41,7 +41,6 @@ int max(int a, int b) {
 
 int main(int argc, char *argv[]) {
 
-
     struct tms start;
     struct tms end;
     clock_t clock_start;
@@ -53,7 +52,6 @@ int main(int argc, char *argv[]) {
         printf("Wrong number of arguments :)");
         exit(1);
     }
-
 
     float width = atof(argv[1]);
     int n = atoi(argv[2]);
