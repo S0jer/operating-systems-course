@@ -44,7 +44,6 @@ char **getProgramArgs(char *com, char *path) {
 
     char *arg = strtok(com, " ");
     strcpy(path, arg);
-
     int ctr = 0;
     args[ctr++] = arg;
     while ((arg = strtok(NULL, " ")) != NULL) {
@@ -67,14 +66,9 @@ char **p(char *line) {
 
 void parse(FILE *file) {
     char **lines = (char **) calloc(MAX_LINES, sizeof(char *));
-    char **com;
-    char **args;
+    char **com; char **args; char *currentLine;
     char *line = (char *) calloc(256, sizeof(char));
-    char *currentLine;
-    int *linesNum;
-    int lineCounter = 0;
-    int linesNumber;
-    int i;
+    int *linesNum; int lineCounter = 0; int linesNumber; int i;
 
     while (fgets(line, 256 * sizeof(char), file)) {
         printf("\n LINE: %s", line);
@@ -90,10 +84,8 @@ void parse(FILE *file) {
                 printf("L %d \n", linesNum[i]);
                 i++;
             }
-
             int pipeIn[2];
             int pipeOut[2];
-
             if (pipe(pipeOut) != 0) {
                 printf("Error while creating a pipe!\n");
                 exit(1);
@@ -130,7 +122,6 @@ void parse(FILE *file) {
                         }
                         char path[256];
                         args = getProgramArgs(com[k], path);
-
                         printf(" EXEC \npath: %s\n", path);
                         m = 0;
                         while (args[m] != NULL) {
@@ -168,7 +159,6 @@ int main(int argc, char *argv[]) {
     }
     char *path = argv[1];
     FILE *com = fopen(path, "r");
-
     if (com == NULL) {
         printf("Can not open file :) \n");
         exit(1);
