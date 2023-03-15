@@ -1,0 +1,60 @@
+2022-05-16 19:26:19
+Client id: 0
+Message type: 5
+Message body:
+''
+
+2022-05-16 19:27:30
+Client id: 0
+Message type: 4
+Message body:
+'Siema'
+
+2022-05-16 19:28:11
+Client id: 0
+Message type: 4
+Message body:
+'Siema'
+
+2022-05-16 19:28:24
+Client id: 0
+Message type: 5
+Message body:
+''
+
+2022-05-16 19:28:31
+Client id: 1
+Message type: 4
+Message body:
+'Siema'
+
+2022-05-16 19:28:55
+Client id: 1
+Message type: 3
+Message body:
+'Co tam?'
+
+2022-05-16 19:29:19
+Client id: 0
+Message type: 5
+Message body:
+''
+
+2022-05-16 19:30:07
+Client id: 1
+Message type: 3
+Message body:
+'Yo'
+
+2022-05-16 19:30:19
+Client id: 1
+Message type: 3
+Message body:
+'Co tam?'
+
+2022-05-16 19:30:29
+Client id: 0
+Message type: 3
+Message body:
+'A git'
+
